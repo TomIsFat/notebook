@@ -13,8 +13,9 @@ trans(){
     then
       echo "include ${j%.*}.html"
     else
-      echo "shangwei trans ${j%.*}.md"
+      echo "will trans ${j%.*}.md"
       ghmd ${j%.*}.md
+      echo '<style>body{ padding: 100px 50px }</style><script>window.location.href = "https://xiaogenban1993.com/blog" + window.location.pathname.replace(".html", "");</script>' >> ${j%.*}.html
     fi
   done
   cd ..
